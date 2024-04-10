@@ -28,11 +28,12 @@ const options = {
     // з текстом "Please choose a date in the future" і зроби кнопку «Start» не активною.
     if (selectedDates[0] < new Date()) {
       iziToast.error({
-        // title: 'Error',
+        title: 'Error',
         message: 'Please choose a date in the future',
         position: 'topRight',
-        backgroundColor: '#EA6150',
+        titleColor: '#FFFFFF',
         messageColor: '#FFFFFF',
+        backgroundColor: '#EA6150',
       });
       buttonElement.disabled = true;
     } else {

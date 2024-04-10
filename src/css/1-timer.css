@@ -19,6 +19,8 @@ h1 {
 }
 
 input {
+  margin-top: 36px;
+  margin-left: 156px;
   font-family: var(--font-family);
   box-sizing: border-box;
   font-weight: 400;
@@ -29,6 +31,7 @@ input {
 
   border: 1px solid #808080;
   border-radius: 4px;
+  outline: transparent;
   width: 272px;
   height: 40px;
   padding: 8px 16px;
@@ -58,6 +61,10 @@ button {
   background: #4e75ff;
 }
 
+button:hover {
+  background: #6c8cff;
+}
+
 button:disabled {
   color: #989898;
   background-color: #cfcfcf;
@@ -65,6 +72,7 @@ button:disabled {
 }
 
 .timer {
+  margin-left: 156px;
   display: flex;
   gap: 24px;
   margin-top: 32px;
