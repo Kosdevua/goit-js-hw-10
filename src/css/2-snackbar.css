@@ -1,0 +1,12 @@
+input[value='fulfilled'] {
+}
+fieldset {
+  width: 360px;
+}
+
+form input {
+  margin-left: 0;
+  display: block;
+  width: 360px;
+  background-color: red;
+}
