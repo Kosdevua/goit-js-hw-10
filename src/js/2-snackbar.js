@@ -15,9 +15,9 @@ import 'izitoast/dist/css/iziToast.min.css';
 const delayInputElement = document.querySelector(['input[name="delay"]']);
 const formElement = document.querySelector('form');
 
-formElement.addEventListener('submit', callback);
+formElement.addEventListener('submit', createPromise);
 
-function callback(event) {
+function createPromise(event) {
   event.preventDefault();
 
   const delayValue = delayInputElement.value.trim();
@@ -26,7 +26,6 @@ function callback(event) {
       const radioChecked = document.querySelector(
         'input[name="state"]:checked'
       );
-      formElement.reset();
       if (radioChecked && radioChecked.value === 'fulfilled') {
         resolve(
           iziToast.success({
@@ -56,5 +55,8 @@ function callback(event) {
     })
     .catch(err => {
       console.log(err);
+    })
+    .finally(final => {
+      formElement.reset();
     });
 }
