@@ -24,11 +24,8 @@ const options = {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    // console.log(selectedDates[0]);
-
     if (selectedDates[0] < new Date()) {
       iziToast.error({
-        title: 'Error',
         message: 'Please choose a date in the future',
         position: 'topRight',
         titleColor: '#FFFFFF',
@@ -49,14 +46,14 @@ buttonElement.addEventListener('click', onButtonClick);
 function onButtonClick() {
   buttonElement.disabled = true;
   const setIntervalId = setInterval(() => {
-    let currentTime = null;
+    let differenceOfTime = null;
 
     if (userSelectedDate) {
-      currentTime = userSelectedDate - Date.now();
+      differenceOfTime = userSelectedDate - Date.now();
     }
 
-    const { days, hours, minutes, seconds } = convertMs(currentTime);
-    if (currentTime > 0) {
+    const { days, hours, minutes, seconds } = convertMs(differenceOfTime);
+    if (differenceOfTime > 0) {
       daysRef.textContent = addLeadingZero(days);
       hoursRef.textContent = addLeadingZero(hours);
       minutesRef.textContent = addLeadingZero(minutes);
@@ -67,6 +64,7 @@ function onButtonClick() {
     }
   }, 1000);
 }
+
 flatpickr(inputElement, options);
 
 function addLeadingZero(value) {

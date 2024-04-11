@@ -2,11 +2,45 @@ input[value='fulfilled'] {
 }
 fieldset {
   width: 360px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  stroke-width: 1px;
+  stroke: #808080;
+  outline: transparent;
+  border: 1px solid #808080;
+}
+
+form {
+  margin: 36px 156px;
 }
 
 form input {
+  margin-top: 0;
   margin-left: 0;
+  height: 100%;
+  width: 70px;
+  margin-bottom: 16px;
+}
+
+input[name='delay'] {
   display: block;
   width: 360px;
-  background-color: red;
+}
+input[name='delay']:hover {
+}
+input[name='delay']:active {
+}
+
+input[type='radio']:checked {
+  background-color: blue;
+  color: red;
+}
+
+form label {
+  display: inline;
+}
+
+fieldset + button {
+  margin-top: 24px;
+  width: 360px;
 }
